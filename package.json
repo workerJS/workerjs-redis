@@ -1,14 +1,26 @@
 {
   "name": "workerjs-redis",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Redis wrapper for WorkerJS",
   "main": "index.js",
+  "dependencies": {
+    "double-ended-queue": "^2.1.0-0",
+    "redis": "^2.7.1",
+    "redis-commands": "^1.3.1",
+    "redis-parser": "^2.6.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/workerJS/workerjs-redis.git"
+  },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "redis": "^2.7.1"
-  }
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/workerJS/workerjs-redis/issues"
+  },
+  "homepage": "https://github.com/workerJS/workerjs-redis#readme"
 }
