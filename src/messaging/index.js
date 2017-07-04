@@ -3,12 +3,11 @@ var redis = require("redis");
 var EventEmitter = require('events');
 
 var messaging = {
-	_listening: {},
+	_listening: {}, \\ List of channels I subscribed to, to avoid duplicate subscribe
 
 	_client: undefined,
 	_rclient: undefined,
 
-	_disabled: false,
 	_eventEmitter: new EventEmitter(),
 
 	on: function(channel, listener){
@@ -50,6 +49,8 @@ var messaging = {
 
 module.exports = function(){
 	if(messaging._client == undefined){
+		// Separate client for reading and writing
+
 		messaging._client = redis.createClient.apply(this, arguments);
 		messaging._rclient = redis.createClient.apply(this, arguments);
 	}

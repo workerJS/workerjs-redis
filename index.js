@@ -1,3 +1,5 @@
+// Just singleton for reducing number of sockets
+
 var queue = require("./src/queue");
 var messaging = require("./src/messaging");
 
