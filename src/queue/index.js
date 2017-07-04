@@ -11,7 +11,7 @@ var queue = {
 	_handler: function(channel){
 		setTimeout(function(){
 			if(!queue._disabled){
-				queue._client.blpop("tasks", 5, function(err, data){
+				queue._client.blpop(channel, 5, function(err, data){
 					if(data != null){
 						queue._eventEmitter.emit(channel, data[1]);
 					}
