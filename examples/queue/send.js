@@ -1,4 +1,4 @@
-var queue = require("./index")();
+var queue = require("../../")().queue;
 
 setInterval(function(){
 	queue.emit("tasks", "123");
