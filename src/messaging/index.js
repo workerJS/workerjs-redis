@@ -3,7 +3,7 @@ var redis = require("redis");
 var EventEmitter = require('events');
 
 var messaging = {
-	_listening: {}, \\ List of channels I subscribed to, to avoid duplicate subscribe
+	_listening: {}, // List of channels I subscribed to, to avoid duplicate subscribe
 
 	_client: undefined,
 	_rclient: undefined,
