@@ -13,19 +13,25 @@ var messaging = {
 
 	on: function(channel, listener){
 		return new Promise(function(resolve, reject){
-			messaging._rclient.subscribe(channel, function(err, data){
-				if(err !== null){
-					reject(err);
-				}
+			if(messaging._listening[channel] == undefined){
+				messaging._listening[channel] = true;
 
-				messaging._rclient.on("message", function (messageChannel, message) {
-					if(messageChannel == channel){
-						messaging._eventEmitter.emit(channel, JSON.parse(message))
+				messaging._rclient.subscribe(channel, function(err, data){
+					if(err !== null){
+						reject(err);
 					}
-				});
 
+					messaging._rclient.on("message", function (messageChannel, message) {
+						if(messageChannel == channel){
+							messaging._eventEmitter.emit(channel, JSON.parse(message))
+						}
+					});
+
+					resolve(messaging._eventEmitter.on(channel, listener));
+				});
+			} else {
 				resolve(messaging._eventEmitter.on(channel, listener));
-			});
+			}
 		});
 	},
 

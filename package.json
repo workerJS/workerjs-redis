@@ -1,6 +1,6 @@
 {
   "name": "workerjs-redis",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Redis wrapper for WorkerJS",
   "main": "index.js",
   "dependencies": {
