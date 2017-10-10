@@ -8,10 +8,10 @@ var redis = {
 	messaging: undefined
 };
 
-module.exports = function(){
+module.exports = function(options){
 	if(redis.messaging == undefined){
-		redis.queue = queue.apply(this, arguments);
-		redis.messaging = messaging.apply(this, arguments);
+		redis.queue = queue(options);
+		redis.messaging = messaging(options);
 	}
 
 	return redis;

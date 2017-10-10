@@ -4,8 +4,10 @@ var EventEmitter = require('events');
 
 var queue = {
 	_listening: {},
+
 	_client: undefined,
 	_disabled: false,
+
 	_eventEmitter: new EventEmitter(),
 
 	_handler: function(channel){
