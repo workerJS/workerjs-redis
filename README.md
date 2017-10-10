@@ -6,7 +6,7 @@ Abstraction layer for using queue and messaging as event listeners.
 
 ### Receive
 
-`` javascript
+``` javascript
 const messaging = require("workerjs-redis")().messaging;
 
 messaging.on("test", function(data){
@@ -21,7 +21,7 @@ messaging.on("test", function(data){
 
 ### Send
 
-`` javascript
+``` javascript
 const messaging = require("workerjs-redis")().messaging;
 
 messaging.emit("test", 123).then(function(){
