@@ -1,3 +1,4 @@
 # workerjs-redis
 
-Redis wrapper for WorkerJS
+Abstraction layer for using queue and messaging as event listeners. 
+
