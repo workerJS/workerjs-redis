@@ -32,3 +32,27 @@ messaging.emit("test", 123).then(function(){
 
 ```
 
+## Queue
+
+### Receive
+
+``` javascript
+var queue = require("workerjs-redis")().queue;
+
+queue.on("tasks", function(data){
+	console.log(data);
+});
+```
+
+### Send
+
+``` javascript
+var queue = require("workerjs-redis")().queue;
+
+queue.emit("tasks", "123").then(function(){
+	console.log("Sent");
+}).catch(function(){
+	console.log("Error while sending");
+});
+```
+
