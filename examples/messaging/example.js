@@ -1,12 +1,11 @@
-var messaging = require("../../")().messaging;
+require("../../")().messaging.then((messaging) => {
+	let i = 0;
 
-var i = 0;
-
-messaging.on("test", function(data){
-	console.log(data);
-}).then(function(){
-	setInterval(function() { 
-		messaging.emit("test", i++);
-	}, 100);
+	messaging.on("test", function (data) {
+		console.log(data);
+	}).then(function () {
+		setInterval(function () {
+			messaging.emit("test", i++);
+		}, 0);
+	});
 });
-

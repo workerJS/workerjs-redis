@@ -59,6 +59,6 @@ module.exports = function(){
 		queue._client = redis.createClient.apply(this, arguments);
 	}
 
-	return queue;
+	return Promise.resolve(queue);
 }
 

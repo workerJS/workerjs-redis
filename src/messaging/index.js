@@ -55,6 +55,6 @@ module.exports = function(){
 		messaging._rclient = redis.createClient.apply(this, arguments);
 	}
 
-	return messaging;
+	return Promise.resolve(messaging);
 }
 
